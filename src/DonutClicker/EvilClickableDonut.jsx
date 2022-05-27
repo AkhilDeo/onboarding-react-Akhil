@@ -1,13 +1,9 @@
 import { useState } from "react";
 import Donut from "./donut.png"
 
-
-
-
-function ClickableDonut({count, setCount}) {
+function EvilClickableDonut({count, setCount}) {
   const [imgHeight, setImgHeight] = useState(380)
   const [imgWidth, setImgWidth] = useState(640)
-
 
   function shrink() {
     setImgHeight(imgHeight * 0.9)
@@ -20,7 +16,7 @@ function ClickableDonut({count, setCount}) {
 
   return (
     <>
-      <img src={Donut} width={imgWidth} height={imgHeight} onClick={() => setCount(count + 1)} 
+      <img src={Donut} width={imgWidth} height={imgHeight} onClick={() => setCount(count - 1)} 
       onMouseDown={() => shrink()} onMouseUp={() => popBack()}></img>
 
     </>
@@ -29,4 +25,4 @@ function ClickableDonut({count, setCount}) {
 
 }
 
-export default ClickableDonut;
+export default EvilClickableDonut;
